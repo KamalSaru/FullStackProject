@@ -1,0 +1,27 @@
+
+@Postmapping
+    {
+        "accountNumber":1001,
+        "firstName": "Kamal",
+        "lastName": "Saru",
+        "phone": 4434491245,
+        "address":"Baltimore MD",
+        "gender": "Male",
+        "dob": "1989-07-23",
+        "email": "kamal@gmail.com",
+        "beginningBalance":100.00,
+        "depositAmount":150.00,
+        "depositDate":"2023-07-23",
+        "withdrawAmount":50.00,
+        "withdrawDate":"2023-07-23",
+        "totalBalance":0.00,
+        "interestAmount":0.00,
+        "serviceFee":5.00,
+        "closingBalance":0.00,
+        "active": "Yes",
+        "action": "Updated"
+    }
+
+@GetMapping
+
+

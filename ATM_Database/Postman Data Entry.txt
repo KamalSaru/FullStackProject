@@ -1,0 +1,37 @@
+
+@Postmapping
+
+
+    {
+        "firstName": "Kamal",
+        "lastName": "Saru",
+        "DOB": "1989-07-23",
+        "gender": "Male",
+        "phone": 4434491245,
+        "email": "kamal@gmail.com",
+        "status": "Citizen",
+        "active": "Yes",
+        "action": "",
+    "CustomerAddress":[
+        {
+        "city": "Baltimore",
+        "county": "Baltimore Courtry",
+        "state": "MD",
+        "zipcode": 21236,
+        "country": "USA"
+        }
+    ],
+
+    "BankStatement":[
+        {
+        "accountNumber": 1001,
+        "deposit": 12.75,
+        "depositDate": "2023-07-30",
+        "withdraw": 5.60,
+        "withdrawDate": "2023-07-28",
+        "interestAmount": 2.75,
+        "totalBalance": 22.75
+        }
+    ]
+    }
+
