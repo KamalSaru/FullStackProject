@@ -1,0 +1,161 @@
+
+<div class="container m-2">
+    <h2>Customer Form</h2>
+    <p>Register New Client</p>
+
+    <form class="form-group mb-2" [formGroup]="customerForm" (ngSubmit)="saveCustomer()">
+        <div class="form-group">
+            <label for="firstName"><span style="color:red;">*</span>First Name:</label>
+            <input type="text" class="form-control" customerID="firstName" formControlName="firstName" required placeholder="Please provide first name.">
+            <div *ngIf="customerForm.get('firstName')?.errors?.['required'] && customerForm.get('firstName')?.touched" class="err">
+        </div>
+
+        <div class="form-group mb-2">
+            <label for="lastName"><span style="color:red;">*</span>Last Name:</label>
+            <input type="text" class="form-control" customerID="lastName" formControlName="lastName" required placeholder="Please provide last name.">
+            <div *ngIf="customerForm.get('lastName')?.errors?.['required'] && customerForm.get('lastName')?.touched" class="err">
+        </div>
+
+        <div class="form-group mb-2">
+            <label for="address"><span style="color:red;">*</span>Address:</label>
+            <input type="text" class="form-control" customerID="address" formControlName="address" required>
+        </div>
+
+        <div class="form-group">
+            <label for="dob"><span style="color:red;">*</span>Date of Birth:</label>
+            <input type="date" class="form-control" customerID="dob" formControlName="dob">
+        </div>
+
+        <div class="form-group mb-3">
+            <label for="gender">Gender:</label>
+            <div>
+              <input type="radio" customerID="male" value="Male" formControlName="gender" />
+              <label for="male">Male</label>
+            <div>
+              <input type="radio" customerID="female" value="Female" formControlName="gender" />
+              <label for="female">Female</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="phone"><span style="color:red;">*</span>Phone Number:</label>
+            <input type="text" class="form-control" customerID="phone" formControlName="phone" required>
+        </div>
+
+        <div class="form-group">
+            <label for="email"><span style="color:red;">*</span>Email:</label>
+            <input type="email" class="form-control" customerID="email" formControlName="email" required>
+        </div>
+
+        <div class="form-group">
+            <label for="travelers"><span style="color:red;">*</span>Travelers:</label>
+            <input type="number" class="form-control" customerID="travelers" formControlName="travelers" required>
+        </div>
+
+        <div class="form-group">
+            <label for="statusClass"><span style="color:red;">*</span>Status Class:</label>
+            <select class="form-control" customerID="status" formControlName="status">
+                <option value="Economic">Economic</option>
+                <option value="Business">Business</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="flyingFrom"><span style="color:red;">*</span>Flying From:</label>
+            <select class="form-control" customerID="flyingFrom" formControlName="flyingFrom">
+                <option value="IAD">IAD</option>
+                <option value="BWI">BWI</option>
+                <option value="JFK">JFK</option>
+                <option value="CFA">CFA</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="flyingTo"><span style="color:red;">*</span>Flying To:</label>
+            <select class="form-control" customerID="flyingTo" formControlName="flyingTo">
+                <option value="KTM">KTM</option>
+                <option value="DOHA">DOHA</option>
+                <option value="DUBAI">DUBAI</option>
+                <option value="SINGAPUR">CFA</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="departureDate"><span style="color:red;">*</span>Departure Date</label>
+            <input type="Date" class="form-control" customerID="departureDate" formControlName="departureDate" required>
+        </div>
+
+        <div class="form-group">
+            <label for="departureTime"><span style="color:red;">*</span>Departure Time:</label>
+            <input type="time" class="form-control" customerID="departureTime" formControlName="departureTime" required>
+        </div>
+
+        <div class="form-group">
+            <label for="airline"><span style="color:red;">*</span>Airline:</label>
+            <!-- <input type="text" class="form-control" id="airline" formControlName="airline" required> -->
+            <select class="form-control" customerID="airline" formControlName="airline">
+                <option value="Qutar">Quatar</option>
+                <option value="Singapur">Singapur</option>
+                <option value="Delta">Delta</option>
+                <option value="Emirate">Emirate</option>
+              </select>
+        </div>
+
+        <div class="form-group">
+            <label for="flightNumber"><span style="color:red;">*</span>Flight Number</label>
+            <!-- <input type="text" class="form-control" id="flightNumber" formControlName="flightNumber" required> -->
+            <select class="form-control" customerID="airline" formControlName="airline">
+                <option value="QR700">QR700</option>
+                <option value="SR555">SR555</option>
+                <option value="DT245">DT245</option>
+                <option value="ET455">ET455</option>
+              </select>
+        </div>
+
+        <div class="form-group">
+            <label for="ticketPrice"><span style="color:red;">*</span>Price:</label>
+            <input type="number" class="form-control" customerID="ticketPrice" formControlName="ticketPrice" required>
+        </div>
+
+        <div class="form-group">
+            <label for="couponDiscount"><span style="color:red;">*</span>Discount</label>
+            <input type="number" class="form-control" customerID="couponDiscount" formControlName="couponDiscount" required>
+        </div>
+
+        <div class="form-group">
+            <label for="tax"><span style="color:red;">*</span>Tax:</label>
+            <input type="number" class="form-control" customerID="tax" formControlName="tax" required>
+        </div>
+
+        <div class="form-group">
+            <label for="finalCost"><span style="color:red;">*</span>Total Cost:</label>
+            <input type="number" class="form-control" customerID="finalCost" formControlName="finalCost" required>
+        </div>
+
+        <div class="form-group">
+            <label for="purchaseDate"><span style="color:red;">*</span>Purchade Date:</label>
+            <input type="date" class="form-control" customerID="purchaseDate" formControlName="purchaseDate" required>
+        </div>
+
+        <div class="form-group">
+            <label for="statusClass"><span style="color:red;">*</span>Status:</label>
+            <select class="form-control" customerID="statusClass" formControlName="statusClass">
+                <option value="Conform">Conform</option>
+                <option value="Pending">Pending</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" customerID="active" formControlName="active" required>
+                <label class="form-check-label" for="active">Is active?</label>
+        </div>
+
+        <button class="btn btn-success" type="submit" routerLink='home'>Save</button>
+        <!---after edit and save data go back to home page-->
+
+        <div>
+            <br>
+            <p>Back To HomePage</p>
+            <button class="btn btn-primary" type="click" routerLink='home'>Back</button>
+        </div>

@@ -1,0 +1,66 @@
+<head>
+    <meta charset="utf-8">
+    <!-- <meta charset="utf-2"> -->
+    <style>
+      table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        /* Remove/borders collapse into a single border-------- */
+      }
+    </style>
+  </head>
+
+<body>
+    <!--<p>ticket-list works!</p>-->
+<h2 style="color: lightseagreen;">Ticket Details</h2>
+
+
+  <table class="table table-striped table-bordered table hover m-2" style="border: 2px solid orchid; width: 100%">
+    <thead class="table-dark">
+    <tr>
+      <th>Ticket ID</th>
+      <th>Travelers</th>
+      <th>Class</th>
+      <th>From</th>
+      <th>To</th>
+      <th>Departure Date</th>
+      <th>Departure Time</th>
+      <th>Airline</th>
+      <th>Flight Number</th>
+      <th>Price</th>
+      <th>Discount</th>
+      <th>Tax</th>
+      <th>Total Cost</th>
+      <th>Purchase Date</th>
+      <th>Action</th>
+    </tr>
+</thead>
+<tbody>
+    <tr *ngFor="let ticket of ticketList">
+      <td>{{ticket.ticketID}}</td>
+      <td>{{ticket.travelers}}</td>
+      <td>{{ticket.statusClass}}</td>
+      <td>{{ticket.flyingFrom}}</td>
+      <td>{{ticket.flyingTo}}</td>
+      <td>{{ticket.departureDate}}</td>
+      <td>{{ticket.departureTime}}</td>
+      <td>{{ticket.airline}}</td>
+      <td>{{ticket.flightNumber}}</td>
+      <td>{{ticket.ticketPrice}}</td>
+      <td>{{ticket.couponDiscount}}</td>
+      <td>{{ticket.tax}}</td>
+      <td>{{ticket.finalCost}}</td>
+      <td>{{ticket.purchaseDate}}</td>
+      <td>
+        <button class="btn btn-outline-success" style="border: 2px solid green;" >Email</button>
+        <button class="btn btn-outline-success" style="border: 2px solid green;"[routerLink]="">Print</button>
+      </td>
+      </tr>
+</tbody>
+</table>
+
+<div>
+  <br>
+  <!-- <strong>←HomePage</strong> -->
+  <button class="btn btn-outline-warning m-2" style="border: 2px solid green;" [routerLink]="['/homepage']">Back-HomePage</button>
+</div>

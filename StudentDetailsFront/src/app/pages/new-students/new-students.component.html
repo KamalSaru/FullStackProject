@@ -1,0 +1,71 @@
+
+<div class="container m-2">
+    <h3>Student Form</h3>
+    <p>Register New Students</p>
+
+    <form class="form-group mb-2" [formGroup]="studentForm" (ngSubmit)="saveStudent()">
+      <div class="form-group">
+        <label for="firstName">First Name:</label>
+        <input type="text" class="form-control" id="firstName" formControlName="firstName" required>
+      </div>
+
+      <div class="form-group mb-2">
+        <label for="lastName">Last Name:</label>
+        <input type="text" class="form-control" id="lastName" formControlName="lastName" required>
+      </div>
+
+      <div class="form-group mb-2">
+        <label for="address">Address:</label>
+        <input type="text" class="form-control" id="address" formControlName="address" required>
+      </div>
+
+      <div class="form-group mb-3">
+        <label for="gender">Gender:</label>
+        <div>
+          <input type="radio" id="male" value="Male" formControlName="gender" />
+          <label for="male">Male</label>
+        </div>
+
+        <div>
+          <input type="radio" id="female" value="Female" formControlName="gender" />
+          <label for="female">Female</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="dob">DOB:</label>
+        <input type="date" class="form-control" id="dob" formControlName="dob">
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" class="form-control" id="email" formControlName="email" required>
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Phone:</label>
+        <input type="text" class="form-control" id="phone" formControlName="phone" required>
+      </div>
+
+      <div class="form-group">
+        <label for="status">Status:</label>
+        <select class="form-control" id="status" formControlName="status">
+          <option value="F1">F1</option>
+          <option value="OPT">OPT</option>
+          <option value="GC">Green Card</option>
+          <option value="Citizen">Citizen</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input" id="active" formControlName="active" required>
+          <label class="form-check-label" for="active">Is active?</label>
+        </div>
+      <button class="btn btn-success" type="submit">Save</button>
+
+    <div>
+        <br>
+        <p>Back To HomePage</p>
+        <button class="btn btn-primary" routerLink="">Back</button>
+    </div>
+

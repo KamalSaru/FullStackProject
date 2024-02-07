@@ -1,0 +1,44 @@
+<div class="container m-2">
+  <form class="form-group mb-2" [formGroup]="adminLoginForm" (ngSubmit)="adminLogin()">
+
+    <body class="plane.webp">
+    <app-root></app-root>
+    </body>
+
+    <div class="form-group">
+      <label for="email"><span style="color:red;">*</span>Email:-</label>
+      <input type="email" class="form-control" adminID="email" formControlName="email" placeholder="Enter valid Email...">
+<!--      <div *ngIf="adminLoginForm.get('email')?.errors?.['email'] && adminLoginForm.get('email')?.touched" class="err">-->
+<!--        Invalid email address!!-->
+<!--      </div>-->
+      <div *ngIf="adminLoginForm.get('email')?.errors?.['required'] && adminLoginForm.get('email')?.touched" class="err">
+        Please enter valid email!!
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="password"><span style="color:red;">*</span>Password:-</label>
+      <input type="password" class="form-control" adminID="password" formControlName="password" placeholder="Enter valid Password...">
+<!--      <div *ngIf="adminLoginForm.get('password')?.errors?.['required'] && adminLoginForm.get('password')?.touched" class="err">-->
+<!--        Please enter valid password!!-->
+<!--      </div>-->
+        <div *ngIf="adminLoginForm.get('password')?.errors?.['minlength'] && adminLoginForm.get('password')?.touched" class="err">
+          Password should contain minimum six characters!!
+      </div>
+
+      <div class="form-group">
+        <!-- For invisible---input-- type="password"---------------------------------- -->
+        <label for="password"><span style="color:red;">*</span>Pincode:-</label>
+        <input type="password" class="form-control" adminID="pinCode" formControlName="pinCode" placeholder="Enter valid pincode...">
+<!--        <div *ngIf="adminLoginForm.get('pinCode')?.errors?.['required'] && adminLoginForm.get('pinCode')?.touched" class="err">-->
+<!--          Please enter valid pincode!!-->
+<!--        </div>-->
+          <div *ngIf="adminLoginForm.get('pinCode')?.errors?.['minlength'] && adminLoginForm.get('pinCode')?.touched" class="err">
+            Pincode should contain four digit!!
+        </div>
+
+      <div>
+        <button class="btn btn-outline-success m-2" type="submit" [disabled]="adminLoginForm.invalid">Login</button>
+        <button class="btn btn-outline-success m-2" routerLink="adminRegister" >Register</button>
+      </div>
+    </div>

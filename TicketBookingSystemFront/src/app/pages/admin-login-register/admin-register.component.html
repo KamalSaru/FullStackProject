@@ -1,0 +1,74 @@
+<div class="container m-2">
+
+  <form class="form-group mb-2" [formGroup]="adminRegisterForm" (ngSubmit)="adminRegister()">
+
+    <div class="form-group">
+      <label for="firstName"><span style="color:red;">*</span>First Name: </label>
+      <input type="firstName" class="form-control" adminID="firstName" formControlName="firstName" placeholder="Please provide first name.">
+      <div *ngIf="adminRegisterForm.get('firstName')?.errors?.['required'] && adminRegisterForm.get('firstName')?.touched" class="err">
+        Please provide first name!!
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="lastName"><span style="color:red;">*</span>Last Name: </label>
+      <input type="lastName" class="form-control" adminID="lastName" formControlName="lastName" placeholder="Please provide last name.">
+      <div *ngIf="adminRegisterForm.get('lastName')?.errors?.['required'] && adminRegisterForm.get('lastName')?.touched" class="err">
+        Please provide last name!!
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="department"><span style="color:red;">*</span>Department: </label>
+      <input type="department" class="form-control" adminID="department" formControlName="department" placeholder="Please provide last name.">
+      <div *ngIf="adminRegisterForm.get('department')?.errors?.['required'] && adminRegisterForm.get('department')?.touched" class="err">
+        Please provide department!!
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="position"><span style="color:red;">*</span>Position: </label>
+      <input type="position" class="form-control" adminID="position" formControlName="position" placeholder="Please provide position.">
+      <div *ngIf="adminRegisterForm.get('position')?.errors?.['required'] && adminRegisterForm.get('position')?.touched" class="err">
+        Please provide position!!
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="email"><span style="color:red;">*</span>Email: </label>
+      <input type="email" class="form-control" adminID="email" formControlName="email" placeholder="Please provide email address."/>
+      <div *ngIf="adminRegisterForm.get('email')?.errors?.['email'] && adminRegisterForm.get('email')?.touched" class="err">
+        Invalid email address.
+      </div>
+      <div *ngIf="adminRegisterForm.get('email')?.errors?.['required'] && adminRegisterForm.get('email')?.touched" class="err">
+        Please provide email address.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="password"><span style="color:red;">*</span>Password: </label>
+      <input type="password" class="form-control" adminID="password" formControlName="password" placeholder="Please provide password." minlength="6">
+      <div *ngIf="adminRegisterForm.get('password')?.errors?.['required'] && adminRegisterForm!.get('password')?.touched" class="err">
+        Please provide password.
+      </div>
+      <div *ngIf="adminRegisterForm.get('password')?.errors?.['minlength'] && adminRegisterForm.get('password')?.touched" class="err">
+        Password should contain minimum six characters.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="password"><span style="color:red;">*</span>Pincode: </label>
+      <input type="password" class="form-control" adminID="pinCode" formControlName="pinCode" placeholder="Please provide pincode." minlength="4" maxlength="4">
+      <div *ngIf="adminRegisterForm.get('pinCode')?.errors?.['required'] && adminRegisterForm!.get('pinCode')?.touched" class="err">
+        Please provide pincode.
+      </div>
+      <div *ngIf="adminRegisterForm.get('pinCode')?.errors?.['minlength'] && adminRegisterForm.get('pinCode')?.touched" class="err">
+        Pincode should contain minimum six digit.
+      </div>
+    </div>
+
+    <div>
+      <button class="btn btn-success m-2" type="submit" [disabled]="adminRegisterForm.invalid" >Register</button>
+    </div>
+  </form>
+</div>
